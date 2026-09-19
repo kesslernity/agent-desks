@@ -3,7 +3,9 @@ name: check
 # Two jobs on purpose. The first proves the committed files still match their TOML,
 # offline, on every push. The second re-reads the four libraries once a week, because
 # a skill renamed upstream breaks the claim this repository makes and there is nothing
-# in a push here that would notice.
+# in a push here that would notice. That job also re-reads the Copilot scheduled prompts
+# README, because the equivalence map names its headings and a rename would make a link
+# point at nothing.
 
 on:
   push:
@@ -33,5 +35,5 @@ jobs:
           python-version: "3.12"
       - name: Rebuild the indexes from the live repositories
         run: sh tools/refresh_indexes.sh
-      - name: Every skill, prompt and profile a pack names still exists
+      - name: Every skill, prompt, profile and mapped Copilot prompt still exists
         run: python3 tools/build.py --check
