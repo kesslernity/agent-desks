@@ -122,6 +122,11 @@ def validate(packs: list[dict]) -> list[str]:
     return problems
 
 
+# Microsoft 365 Copilot carries at most eight skills per agent, in Agent Builder and the
+# Agents Toolkit alike. Sourced from awesome-copilot-agent-skills (docs/SETUP-GUIDE.md and
+# FAQ.md), which tracks the preview. It is a platform limit, not one this repo chose.
+COPILOT_SKILL_CAP = 8
+
 def pack_md(p: dict) -> str:
     L = [f"# {p['role']}", "", para(p["summary"]), "",
          f"**Who owns it.** {para(p['owner'])}", "",
@@ -132,8 +137,17 @@ def pack_md(p: dict) -> str:
               "[GATE.md](GATE.md).", "",
           f"## Skills, {len(p['skills'])} of them, on either runtime", "",
           "Same skill names in both libraries. Pick the runtime you are on and take the "
-          "folder of that name.", "",
-          "| Skill | Microsoft 365 Copilot | Mistral Vibe |", "|---|---|---|"]
+          "folder of that name.", ""]
+    if len(p["skills"]) > COPILOT_SKILL_CAP:
+        L += [f"**This is more than one Copilot agent can hold.** Microsoft 365 Copilot "
+              f"carries at most {COPILOT_SKILL_CAP} skills per agent, in Agent Builder and "
+              f"in the Agents Toolkit alike, and this desk lists {len(p['skills'])}. So read "
+              f"the table as the role's full range rather than one agent's payload: take the "
+              f"skills for the task in front of you, or split the desk across more than one "
+              f"agent. Mistral Vibe documents no such limit, so the whole list can sit in one "
+              f"`.agents/skills/` folder. The cap is Microsoft's and preview limits move; "
+              f"check your own tenant rather than this sentence.", ""]
+    L += ["| Skill | Microsoft 365 Copilot | Mistral Vibe |", "|---|---|---|"]
     paths = copilot_paths()
     for s in p["skills"]:
         L.append(f"| `{s}` | [{paths[s].split('/')[0]}]({COPILOT_SKILL}/{paths[s]}) "
@@ -149,8 +163,10 @@ def pack_md(p: dict) -> str:
         L += [""]
     else:
         L += ["## Scheduled routines", "",
-              "**None.** This desk is event driven, and putting it on a timer would produce "
-              "output nobody asked for. Not every role wants a cron.", ""]
+              "**None.** Nothing here runs on a timer, deliberately. This desk keeps the "
+              "cadence stated at the top of the page, which is a person's and not a "
+              "scheduler's. Putting it on a timer would produce output nobody asked for. "
+              "Not every role wants a cron.", ""]
     if p.get("profile"):
         L += ["## Agent profile", "",
               f"On Mistral Vibe, run this desk under the `{p['profile']}` profile from "

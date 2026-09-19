@@ -30,7 +30,7 @@ Same skill names in both libraries. Pick the runtime you are on and take the fol
 
 ## Scheduled routines
 
-**None.** This desk is event driven, and putting it on a timer would produce output nobody asked for. Not every role wants a cron.
+**None.** Nothing here runs on a timer, deliberately. This desk keeps the cadence stated at the top of the page, which is a person's and not a scheduler's. Putting it on a timer would produce output nobody asked for. Not every role wants a cron.
 
 ## Agent profile
 

@@ -19,6 +19,8 @@ The gate that goes with this, and what a person puts their name to, is in [GATE.
 
 Same skill names in both libraries. Pick the runtime you are on and take the folder of that name.
 
+**This is more than one Copilot agent can hold.** Microsoft 365 Copilot carries at most 8 skills per agent, in Agent Builder and in the Agents Toolkit alike, and this desk lists 11. So read the table as the role's full range rather than one agent's payload: take the skills for the task in front of you, or split the desk across more than one agent. Mistral Vibe documents no such limit, so the whole list can sit in one `.agents/skills/` folder. The cap is Microsoft's and preview limits move; check your own tenant rather than this sentence.
+
 | Skill | Microsoft 365 Copilot | Mistral Vibe |
 |---|---|---|
 | `project-status-tracker` | [project-management](https://github.com/kesslernity/awesome-copilot-agent-skills/tree/main/skills/project-management/project-status-tracker) | [skill](https://github.com/kesslernity/awesome-mistral-vibe-skills/tree/main/.agents/skills/project-status-tracker) |

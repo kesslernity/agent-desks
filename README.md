@@ -33,7 +33,7 @@ will answer the same way.
 ## What a pack is
 
 A desk is the role. A pack is the folder that defines one, and there are nine of them under
-`packs/`. Four files each.
+`packs/`. Three files each, plus one manifest they all share at the repository root.
 
 | File | What it holds |
 |---|---|
@@ -52,7 +52,10 @@ A desk is the role. A pack is the folder that defines one, and there are nine of
    [awesome-copilot-agent-skills](https://github.com/kesslernity/awesome-copilot-agent-skills).
    Agent Builder was a Microsoft preview limited to Frontier tenants when this was written on
    19 September 2026, which is a rollout state that moves. Check what your own tenant has
-   rather than taking that date as current.
+   rather than taking that date as current. One Copilot agent carries at most eight skills,
+   and every desk here except Standing Review lists more than eight, so a desk is a role map
+   to choose from rather than a payload to upload whole. Each `PACK.md` says so where it
+   applies. Mistral Vibe documents no such limit.
 3. On **Mistral Vibe**, copy the same named folders from
    [awesome-mistral-vibe-skills](https://github.com/kesslernity/awesome-mistral-vibe-skills)
    into `.agents/skills/`, and start the session under the profile the pack names, from
