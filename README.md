@@ -1,4 +1,4 @@
-# Awesome Agent Role Packs
+# Agent Desks
 
 Nine desks. Each one is a role, the skills it uses, the routines it runs on a schedule, and a
 page naming exactly what a person has to sign before anything it produces counts.
@@ -32,7 +32,8 @@ will answer the same way.
 
 ## What a pack is
 
-A folder with four files.
+A desk is the role. A pack is the folder that defines one, and there are nine of them under
+`packs/`. Four files each.
 
 | File | What it holds |
 |---|---|
