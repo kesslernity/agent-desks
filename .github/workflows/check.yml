@@ -1,0 +1,37 @@
+name: check
+
+# Two jobs on purpose. The first proves the committed files still match their TOML,
+# offline, on every push. The second re-reads the four libraries once a week, because
+# a skill renamed upstream breaks the claim this repository makes and there is nothing
+# in a push here that would notice.
+
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron: "17 6 * * 1"
+  workflow_dispatch:
+
+jobs:
+  generated-files-are-current:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python3 tools/build.py --check
+      - run: python3 tools/test_build.py
+
+  libraries-still-have-these-skills:
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Rebuild the indexes from the live repositories
+        run: sh tools/refresh_indexes.sh
+      - name: Every skill, prompt and profile a pack names still exists
+        run: python3 tools/build.py --check
