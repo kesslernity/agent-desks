@@ -36,12 +36,12 @@ Same skill names in both libraries. Pick the runtime you are on and take the fol
 
 ## Scheduled routines
 
-On Mistral Vibe these are prompt files you attach to a scheduled task. On the Copilot side the equivalents live in one file, linked from each row.
+On Mistral Vibe these are prompt files you attach to a scheduled task. The Copilot column names the prompt in that library's scheduled prompts README that answers the same question, and says so plainly where nothing does.
 
 | Routine | Mistral Vibe | Microsoft 365 Copilot |
 |---|---|---|
-| `pipeline-hygiene-check` | [prompt](https://github.com/kesslernity/awesome-mistral-vibe-prompts/blob/main/prompts/scheduled/pipeline-hygiene-check.md) | [scheduled prompts](https://github.com/kesslernity/awesome-microsoft-copilot-prompts/blob/main/prompts/scheduled-prompts/README.md) |
-| `competitor-watch` | [prompt](https://github.com/kesslernity/awesome-mistral-vibe-prompts/blob/main/prompts/scheduled/competitor-watch.md) | [scheduled prompts](https://github.com/kesslernity/awesome-microsoft-copilot-prompts/blob/main/prompts/scheduled-prompts/README.md) |
+| `pipeline-hygiene-check` | [prompt](https://github.com/kesslernity/awesome-mistral-vibe-prompts/blob/main/prompts/scheduled/pipeline-hygiene-check.md) | [4. Weekly Pipeline Pulse](https://github.com/kesslernity/awesome-microsoft-copilot-prompts/blob/main/prompts/scheduled-prompts/README.md#4-weekly-pipeline-pulse) |
+| `competitor-watch` | [prompt](https://github.com/kesslernity/awesome-mistral-vibe-prompts/blob/main/prompts/scheduled/competitor-watch.md) | [6. Competitive Intelligence Digest](https://github.com/kesslernity/awesome-microsoft-copilot-prompts/blob/main/prompts/scheduled-prompts/README.md#6-competitive-intelligence-digest) |
 
 ## Agent profile
 

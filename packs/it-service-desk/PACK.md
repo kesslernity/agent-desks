@@ -38,12 +38,14 @@ Same skill names in both libraries. Pick the runtime you are on and take the fol
 
 ## Scheduled routines
 
-On Mistral Vibe these are prompt files you attach to a scheduled task. On the Copilot side the equivalents live in one file, linked from each row.
+On Mistral Vibe these are prompt files you attach to a scheduled task. The Copilot column names the prompt in that library's scheduled prompts README that answers the same question, and says so plainly where nothing does.
+
+The two libraries were written separately, so the routines do not line up one for one. 2 of the 2 here have no Copilot counterpart yet. On that runtime you write the prompt yourself, or you leave the routine to a person. Better to say which than to link you to a file and let you find out.
 
 | Routine | Mistral Vibe | Microsoft 365 Copilot |
 |---|---|---|
-| `overnight-incident-digest` | [prompt](https://github.com/kesslernity/awesome-mistral-vibe-prompts/blob/main/prompts/scheduled/overnight-incident-digest.md) | [scheduled prompts](https://github.com/kesslernity/awesome-microsoft-copilot-prompts/blob/main/prompts/scheduled-prompts/README.md) |
-| `access-review-prep` | [prompt](https://github.com/kesslernity/awesome-mistral-vibe-prompts/blob/main/prompts/scheduled/access-review-prep.md) | [scheduled prompts](https://github.com/kesslernity/awesome-microsoft-copilot-prompts/blob/main/prompts/scheduled-prompts/README.md) |
+| `overnight-incident-digest` | [prompt](https://github.com/kesslernity/awesome-mistral-vibe-prompts/blob/main/prompts/scheduled/overnight-incident-digest.md) | none, write your own |
+| `access-review-prep` | [prompt](https://github.com/kesslernity/awesome-mistral-vibe-prompts/blob/main/prompts/scheduled/access-review-prep.md) | none, write your own |
 
 ## Agent profile
 

@@ -32,6 +32,12 @@
         "What is disclosed to a market, a regulator or an investor.",
         "Whether a reviewer's objection is answered. The panel raises it; you answer it.",
         "Which numbers are the official ones."
+      ],
+      "human_signs": [
+        "Every board paper and every decision memo, as the author.",
+        "Any disclosure, through whatever process governs disclosures.",
+        "The figures, reconciled to the system of record rather than to the briefing.",
+        "The decision, recorded with the date and the options that were rejected."
       ]
     },
     {
@@ -63,6 +69,12 @@
         "Whether a variance is acceptable. It explains the arithmetic, not the tolerance.",
         "Whether to renew or cancel a contract.",
         "Any figure that goes into a statutory filing."
+      ],
+      "human_signs": [
+        "Every payment exception, released by the person with the authority to release it.",
+        "The variance narrative before it reaches a board or an investor.",
+        "A renewal or a cancellation, in writing, before the notice window closes.",
+        "The close checklist, signed by the controller, not marked complete by the desk."
       ]
     },
     {
@@ -92,6 +104,12 @@
         "Whether conduct has occurred, or how it should be treated.",
         "Whether a policy applies to a specific case. It states what the policy says and routes the question.",
         "Anything that would be an employment decision under local law."
+      ],
+      "human_signs": [
+        "Every performance rating and every comment attached to a named person.",
+        "Every hiring decision, with the scorecard as one input among several.",
+        "Any policy interpretation before it is given to an employee as an answer.",
+        "All change communication, by the accountable leader, not the desk."
       ]
     },
     {
@@ -124,6 +142,12 @@
         "Whether a change goes ahead. A change request pack is an input to CAB, not a substitute for it.",
         "Root cause. A postmortem draft proposes one and marks it as unconfirmed until a person agrees.",
         "When an incident is closed."
+      ],
+      "human_signs": [
+        "The access decision on every line of an access review, by name.",
+        "The change request before it enters the approval queue.",
+        "The root cause statement in any postmortem that leaves the team.",
+        "Any knowledge article that will be read by someone outside the desk."
       ]
     },
     {
@@ -155,6 +179,12 @@
         "Whether a risk is accepted, mitigated or escalated.",
         "A date change. It explains the slip; rebaselining is a governance act.",
         "Who is accountable for a missed action."
+      ],
+      "human_signs": [
+        "The RAG status on every report that leaves the team.",
+        "Any date change, through whatever change control the programme runs.",
+        "Risk acceptance, by the person carrying the consequence.",
+        "Minutes, before they are treated as the record."
       ]
     },
     {
@@ -184,6 +214,12 @@
         "Whether a corrective action was effective.",
         "Any safety authorisation. Not a permit to work, not a lockout, not a confined space entry, not a JSA sign-off, not an inspection clearance.",
         "The revision status of a controlled document."
+      ],
+      "human_signs": [
+        "Every nonconformance closure, by the quality manager.",
+        "Effectiveness verification, with the evidence, not the intention.",
+        "Every controlled document revision, by its custodian, through the document control system.",
+        "Every safety authorisation, by an authorised person, with no agent output in the approval path."
       ]
     },
     {
@@ -214,6 +250,12 @@
         "Price, discount or commercial terms.",
         "A forecast commit. Qualification scoring is evidence for the conversation.",
         "What is said to a customer. Every draft goes out under a person's name, after they have read it."
+      ],
+      "human_signs": [
+        "Anything that reaches a customer, read in full first.",
+        "The commit, by the account owner, in the forecast review.",
+        "Every commercial term, through whatever delegation of authority applies.",
+        "A case study, by the customer, before it is published."
       ]
     },
     {
@@ -245,6 +287,12 @@
         "Whether an incident is reportable to a regulator. It drafts the impact brief and stops.",
         "Whether a vendor is acceptable. A screening brief is an input to a decision, not the decision.",
         "The residual risk rating on any register line."
+      ],
+      "human_signs": [
+        "Every control effectiveness conclusion, with the evidence reference.",
+        "Any regulator-facing statement, before it leaves the organisation.",
+        "The residual risk rating and the acceptance, by the risk owner.",
+        "A vendor approval, with the screening brief attached rather than quoted."
       ]
     },
     {
@@ -268,6 +316,11 @@
         "Whether a desk keeps running. It reports what stopped and who owns it.",
         "Whether an output was correct. It checks whether an output happened at all.",
         "Anything about a person's performance. A desk that stopped is an operational fact, not an appraisal."
+      ],
+      "human_signs": [
+        "The weekly review itself, read by a person, not filed by one.",
+        "Any decision to retire, pause or change a desk.",
+        "The list of desks currently running, confirmed against reality rather than against this repository."
       ]
     }
   ],

@@ -92,12 +92,55 @@ case("two packs claiming the same role",
      lambda p: p.append(dict(copy.deepcopy(GOOD), slug="other-desk")),
      "collides with")
 
+
+def with_map(equivalent, no_equivalent):
+    """Swap in a broken scheduled map for one case.
+
+    The map is the only claim here that no file listing can settle, so its three
+    failure modes need a case each, and each case has to be able to lie about the
+    map without editing the real one.
+    """
+    def f(packs):
+        build.load_scheduled_map = lambda: (equivalent, set(no_equivalent))
+    return f
+
+
+_real_map = build.load_scheduled_map
+case("a routine with no verdict in the scheduled map",
+     with_map({}, []), "has no entry")
+case("a Copilot prompt the README does not contain",
+     with_map({"overnight-incident-digest.md": "99. A Prompt Nobody Wrote"}, []),
+     "is not a heading")
+case("a routine both mapped and declared to have no equivalent",
+     with_map({"overnight-incident-digest.md": "1. Morning Email Briefing"},
+              ["overnight-incident-digest.md"]),
+     "both mapped and listed")
+case("a map entry naming a routine that does not exist",
+     with_map({"a-routine-we-invented.md": "1. Morning Email Briefing"}, []),
+     "is not in awesome-mistral-vibe-prompts")
+build.load_scheduled_map = _real_map
+
 print("generator")
 _pack = copy.deepcopy(GOOD)
 for text, label in ((build.pack_md(_pack), "PACK.md"), (build.gate_md(_pack), "GATE.md")):
     if "—" in text or "–" in text:
         failures.append(f"{label} contains a dash the house style does not use")
     print(f"  {'ok  ' if '—' not in text else 'FAIL'}  no em dashes in generated {label}")
+
+# The defect this replaced: every routine linked to the same README, so a row could
+# promise a Copilot equivalent that the file did not contain. Both cells are checked.
+_mapped = dict(copy.deepcopy(GOOD), scheduled=["project-rollup.md"])
+if "#7-weekly-project-status-brief" not in build.pack_md(_mapped):
+    failures.append("a mapped routine must link to its own Copilot prompt, not the file")
+print("  ok    a mapped routine deep links to the prompt that matches it")
+
+if "none, write your own" not in build.pack_md(copy.deepcopy(GOOD)):
+    failures.append("a routine with no Copilot equivalent must say so in the table")
+print("  ok    a routine with no equivalent says so instead of linking")
+
+if build.heading_anchor("10. Weekly Budget Alert Digest") != "10-weekly-budget-alert-digest":
+    failures.append("heading_anchor does not match GitHub's slug")
+print("  ok    heading anchors match GitHub's slug rule")
 
 _no_cron = dict(copy.deepcopy(GOOD), scheduled=[])
 if "**None.**" not in build.pack_md(_no_cron):

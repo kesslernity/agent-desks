@@ -1,0 +1,32 @@
+# Which Microsoft 365 Copilot scheduled prompt answers the same question as each
+# Mistral Vibe scheduled routine.
+#
+# The two libraries were written independently, so the names do not correspond and
+# most routines have no counterpart at all. This file is the judgement call, made
+# once, in the open, rather than implied by a link that points at a file which may
+# not contain anything of the sort. Keys are the routine file names from
+# awesome-mistral-vibe-prompts; values are headings from the single scheduled
+# prompts README in awesome-microsoft-copilot-prompts, copied exactly, since the
+# build derives the anchor from the heading and checks it against the index.
+#
+# Every routine has to appear in exactly one of the two blocks below. The build
+# fails otherwise, so a new routine cannot ship with a silently missing column.
+
+# No Copilot prompt covers these. Saying so is the honest column value, and it is
+# also the backlog: each one is a gap in the Copilot library worth filling.
+no_equivalent = [
+  "access-review-prep.md",
+  "backlog-ageing-report.md",
+  "doc-change-watch.md",
+  "kpi-pack-prep.md",
+  "overnight-incident-digest.md",
+  "regulation-diff-watch.md",
+  "vendor-renewal-lookahead.md",
+]
+
+[equivalent]
+"inbox-triage-digest.md"    = "1. Morning Email Briefing"
+"pipeline-hygiene-check.md" = "4. Weekly Pipeline Pulse"
+"competitor-watch.md"       = "6. Competitive Intelligence Digest"
+"project-rollup.md"         = "7. Weekly Project Status Brief"
+"spend-anomaly-watch.md"    = "10. Weekly Budget Alert Digest"

@@ -22,6 +22,7 @@ INDEX = ROOT / "tools" / "indexes"
 COPILOT_SKILL = "https://github.com/kesslernity/awesome-copilot-agent-skills/tree/main/skills"
 MISTRAL_SKILL = "https://github.com/kesslernity/awesome-mistral-vibe-skills/tree/main/.agents/skills"
 MISTRAL_SCHED = "https://github.com/kesslernity/awesome-mistral-vibe-prompts/blob/main/prompts/scheduled"
+SCHED_MAP = ROOT / "tools" / "scheduled-map.toml"
 COPILOT_SCHED = ("https://github.com/kesslernity/awesome-microsoft-copilot-prompts"
                  "/blob/main/prompts/scheduled-prompts/README.md")
 
@@ -63,6 +64,26 @@ def copilot_paths() -> dict[str, str]:
     return out
 
 
+def load_scheduled_map() -> tuple[dict[str, str], set[str]]:
+    """Routine file name to the Copilot prompt heading that answers the same question.
+
+    Returns the mapped pairs and the set that deliberately has no counterpart.
+    The two libraries grew separately and most routines have no Copilot twin, so
+    the pairing is a judgement recorded in tools/scheduled-map.toml and checked
+    here, not something a shared link can imply.
+    """
+    with SCHED_MAP.open("rb") as fh:
+        data = tomllib.load(fh)
+    return data.get("equivalent", {}), set(data.get("no_equivalent", []))
+
+
+def heading_anchor(heading: str) -> str:
+    """GitHub's anchor for a Markdown heading: lowercase, punctuation dropped,
+    spaces hyphenated. Deriving it beats writing it down twice."""
+    keep = "".join(c for c in heading.lower() if c.isalnum() or c in " -_")
+    return keep.strip().replace(" ", "-")
+
+
 def load_packs() -> list[dict]:
     packs = []
     for toml_path in sorted(PACKS.glob("*/pack.toml")):
@@ -87,6 +108,26 @@ def validate(packs: list[dict]) -> list[str]:
     scheduled = load_index("mistral-scheduled")
     profiles = load_index("mistral-profiles")
     problems: list[str] = []
+
+    # The scheduled map is the one claim here that no index can make on its own:
+    # it says a Copilot prompt and a Mistral routine do the same job. Check both
+    # ends exist, and that no routine is missing a verdict or carrying two.
+    equivalent, no_equivalent = load_scheduled_map()
+    copilot_scheduled = load_index("copilot-scheduled")
+    for name, heading in equivalent.items():
+        if heading not in copilot_scheduled:
+            problems.append(f"scheduled-map: '{heading}' is not a heading in the "
+                            f"Copilot scheduled prompts README")
+    for name in sorted(set(equivalent) & no_equivalent):
+        problems.append(f"scheduled-map: '{name}' is both mapped and listed as having "
+                        f"no equivalent")
+    for name in sorted(set(equivalent) | no_equivalent):
+        if name not in scheduled:
+            problems.append(f"scheduled-map: '{name}' is not in awesome-mistral-vibe-prompts")
+    for name in sorted(s for p in packs for s in p.get("scheduled", [])):
+        if name not in equivalent and name not in no_equivalent:
+            problems.append(f"scheduled-map: routine '{name}' has no entry. Name its "
+                            f"Copilot equivalent or list it under no_equivalent")
 
     for p in packs:
         slug = p["slug"]
@@ -154,12 +195,25 @@ def pack_md(p: dict) -> str:
                  f"| [skill]({MISTRAL_SKILL}/{s}) |")
     L += [""]
     if p.get("scheduled"):
+        equivalent, _ = load_scheduled_map()
+        missing = [s for s in p["scheduled"] if s not in equivalent]
         L += ["## Scheduled routines", "",
-              "On Mistral Vibe these are prompt files you attach to a scheduled task. On the "
-              "Copilot side the equivalents live in one file, linked from each row.", "",
-              "| Routine | Mistral Vibe | Microsoft 365 Copilot |", "|---|---|---|"]
+              "On Mistral Vibe these are prompt files you attach to a scheduled task. The "
+              "Copilot column names the prompt in that library's scheduled prompts README "
+              "that answers the same question, and says so plainly where nothing does.", ""]
+        if missing:
+            verb = "has" if len(missing) == 1 else "have"
+            L += [f"The two libraries were written separately, so the routines do not line "
+                  f"up one for one. {len(missing)} of the {len(p['scheduled'])} here {verb} no "
+                  f"Copilot counterpart yet. On that runtime you write the prompt yourself, "
+                  f"or you leave the routine to a person. Better to say which than to link "
+                  f"you to a file and let you find out.", ""]
+        L += ["| Routine | Mistral Vibe | Microsoft 365 Copilot |", "|---|---|---|"]
         for s in p["scheduled"]:
-            L.append(f"| `{s[:-3]}` | [prompt]({MISTRAL_SCHED}/{s}) | [scheduled prompts]({COPILOT_SCHED}) |")
+            head = equivalent.get(s)
+            cell = (f"[{head}]({COPILOT_SCHED}#{heading_anchor(head)})" if head
+                    else "none, write your own")
+            L.append(f"| `{s[:-3]}` | [prompt]({MISTRAL_SCHED}/{s}) | {cell} |")
         L += [""]
     else:
         L += ["## Scheduled routines", "",
@@ -251,6 +305,7 @@ def main() -> int:
             "cadence": p["cadence"], "one_line": p["one_line"],
             "skills": p["skills"], "scheduled": p.get("scheduled", []),
             "profile": p.get("profile"), "never_decides": p["never_decides"],
+            "human_signs": p["human_signs"],
         } for p in packs],
         "totals": {
             "packs": len(packs),

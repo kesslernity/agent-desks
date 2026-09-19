@@ -62,8 +62,12 @@ A desk is the role. A pack is the folder that defines one, and there are nine of
    [awesome-mistral-vibe-agents](https://github.com/kesslernity/awesome-mistral-vibe-agents).
    The profile is the permission block. An instruction in a prompt is not one.
 4. For the scheduled routines, attach the prompt files from
-   [awesome-mistral-vibe-prompts](https://github.com/kesslernity/awesome-mistral-vibe-prompts),
-   or the Copilot equivalents, to whatever your platform calls a scheduled task. Point the
+   [awesome-mistral-vibe-prompts](https://github.com/kesslernity/awesome-mistral-vibe-prompts)
+   to whatever your platform calls a scheduled task. Five of the twelve routines have a
+   Copilot prompt that answers the same question, and each `PACK.md` links to that prompt by
+   name. The other seven have none, and the table says so rather than sending you to a file
+   to find out. The two libraries were written separately and the schedules did not line up.
+   Point the
    output at a person. A schedule that writes into a ticket queue, a mailbox or a repository
    with nobody reading it first is the one configuration that defeats every gate in here, and
    nothing in this repository can stop you building it. I have not tested these against any
@@ -90,6 +94,13 @@ checked, not asserted. `tools/refresh_indexes.sh` pulls the current file listing
 the four public repositories, and `tools/build.py --check` fails if a pack names a skill, a
 scheduled prompt or an agent profile that is not in them. It also fails if a pack is missing an
 owner, a cadence, or a single line saying what it never decides.
+
+The scheduled routines are the one place where no listing can settle it, because the claim
+there is that two differently named prompts do the same job. That pairing is written down once
+in `tools/scheduled-map.toml` and checked from both ends: every routine a pack schedules needs
+a verdict in that file, either a named Copilot prompt or an entry saying there is none, and
+every prompt it names has to still be a heading in the Copilot README. A routine added without
+a verdict fails the build.
 
 ```sh
 sh tools/refresh_indexes.sh     # rebuild the indexes from the live repositories

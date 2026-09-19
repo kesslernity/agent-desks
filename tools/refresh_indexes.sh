@@ -22,6 +22,13 @@ api "https://api.github.com/repos/kesslernity/awesome-mistral-vibe-prompts/git/t
   | python3 -c "import json,sys,re;t=json.load(sys.stdin)['tree'];print('\n'.join(sorted({m.group(1) for p in t if (m:=re.fullmatch(r'prompts/scheduled/(.+\.md)',p['path'])) and p['type']=='blob'})))" \
   > mistral-scheduled.txt
 
+# copilot-scheduled.txt holds the numbered headings of the single scheduled prompts
+# README, in the order they appear, because a heading is what a deep link anchors to.
+# This one reads the file rather than the tree: the prompts are sections, not files.
+curl -sSf "https://raw.githubusercontent.com/kesslernity/awesome-microsoft-copilot-prompts/main/prompts/scheduled-prompts/README.md" \
+  | python3 -c "import re,sys;print('\n'.join(re.findall(r'^### (\d+\..+?)\s*\$', sys.stdin.read(), re.M)))" \
+  > copilot-scheduled.txt
+
 api "https://api.github.com/repos/kesslernity/awesome-mistral-vibe-agents/git/trees/main?recursive=1" \
   | python3 -c "import json,sys,re;t=json.load(sys.stdin)['tree'];print('\n'.join(sorted({m.group(1) for p in t if (m:=re.fullmatch(r'\.vibe/agents/(.+)\.toml',p['path'])) and p['type']=='blob'})))" \
   > mistral-profiles.txt

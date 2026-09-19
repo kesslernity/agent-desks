@@ -36,11 +36,13 @@ Same skill names in both libraries. Pick the runtime you are on and take the fol
 
 ## Scheduled routines
 
-On Mistral Vibe these are prompt files you attach to a scheduled task. On the Copilot side the equivalents live in one file, linked from each row.
+On Mistral Vibe these are prompt files you attach to a scheduled task. The Copilot column names the prompt in that library's scheduled prompts README that answers the same question, and says so plainly where nothing does.
+
+The two libraries were written separately, so the routines do not line up one for one. 1 of the 1 here has no Copilot counterpart yet. On that runtime you write the prompt yourself, or you leave the routine to a person. Better to say which than to link you to a file and let you find out.
 
 | Routine | Mistral Vibe | Microsoft 365 Copilot |
 |---|---|---|
-| `doc-change-watch` | [prompt](https://github.com/kesslernity/awesome-mistral-vibe-prompts/blob/main/prompts/scheduled/doc-change-watch.md) | [scheduled prompts](https://github.com/kesslernity/awesome-microsoft-copilot-prompts/blob/main/prompts/scheduled-prompts/README.md) |
+| `doc-change-watch` | [prompt](https://github.com/kesslernity/awesome-mistral-vibe-prompts/blob/main/prompts/scheduled/doc-change-watch.md) | none, write your own |
 
 ## Agent profile
 
