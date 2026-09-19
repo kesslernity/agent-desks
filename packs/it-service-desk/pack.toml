@@ -1,0 +1,45 @@
+role = "IT Service Desk"
+one_line = "Tickets, incidents, access requests and the knowledge base behind them"
+owner = "The service desk lead. Not the person who built the agent."
+cadence = "Two scheduled routines overnight, the rest pulled when a ticket lands."
+profile = "humans-decide"
+
+summary = """
+The desk that absorbs the volume: triage, the first draft of a runbook, the
+postmortem nobody has time to write, and the access review that gets skipped because it is
+tedious. Everything here produces a document a human then reads. None of it closes a ticket,
+grants access, or pushes a change.
+"""
+
+skills = [
+  "ticket-triage-pack",
+  "incident-postmortem-drafter",
+  "runbook-drafter",
+  "knowledge-article-drafter",
+  "knowledge-base-hygiene-review",
+  "change-request-pack",
+  "access-review-pack",
+  "software-request-review",
+  "service-catalogue-entry",
+  "escalation-summary",
+  "inbox-triage",
+  "custom-daily-brief",
+]
+scheduled = [
+  "overnight-incident-digest.md",
+  "access-review-prep.md",
+]
+
+never_decides = [
+  "Whether an access request is approved. It assembles the evidence and names who owns the decision.",
+  "Whether a change goes ahead. A change request pack is an input to CAB, not a substitute for it.",
+  "Root cause. A postmortem draft proposes one and marks it as unconfirmed until a person agrees.",
+  "When an incident is closed.",
+]
+
+human_signs = [
+  "The access decision on every line of an access review, by name.",
+  "The change request before it enters the approval queue.",
+  "The root cause statement in any postmortem that leaves the team.",
+  "Any knowledge article that will be read by someone outside the desk.",
+]

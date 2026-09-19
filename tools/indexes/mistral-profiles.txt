@@ -1,0 +1,17 @@
+change-summariser
+cheap
+codebase-cartographer
+commit-ready
+dependency-auditor
+docs-only
+humans-decide
+local-only
+no-network
+quiet-context
+read-only
+review-only
+skills-off
+slow-build
+source-collector
+subagents-ready
+test-runner

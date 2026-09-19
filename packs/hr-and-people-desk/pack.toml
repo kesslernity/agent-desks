@@ -1,0 +1,47 @@
+role = "HR and People Desk"
+one_line = "Job descriptions, onboarding, scorecards, policy answers and change comms"
+owner = "The HR business partner for the population affected."
+cadence = "Event driven. Nothing here runs on a timer, deliberately."
+profile = "humans-decide"
+
+summary = """
+The most sensitive desk in this repository, and the one with the tightest gate. It
+drafts the paperwork around people decisions and never makes one. Anything that reads like an
+assessment of a named individual is the paperwork, not the judgement.
+"""
+
+skills = [
+  "job-description-drafter",
+  "interview-scorecard-builder",
+  "onboarding-plan-builder",
+  "performance-review-drafter",
+  "exit-interview-synthesis",
+  "policy-question-answerer",
+  "policy-change-briefing",
+  "change-communication-plan",
+  "impact-log-builder",
+  "training-needs-synthesis",
+  "course-outline-builder",
+  "training-quiz-builder",
+]
+scheduled = []
+
+never_decides = [
+  "Any outcome for a named person: hiring, rating, promotion, pay or exit.",
+  "Whether conduct has occurred, or how it should be treated.",
+  "Whether a policy applies to a specific case. It states what the policy says and routes the question.",
+  "Anything that would be an employment decision under local law.",
+]
+
+human_signs = [
+  "Every performance rating and every comment attached to a named person.",
+  "Every hiring decision, with the scorecard as one input among several.",
+  "Any policy interpretation before it is given to an employee as an answer.",
+  "All change communication, by the accountable leader, not the desk.",
+]
+
+when_wrong = """
+This is the desk where a quiet error does the most damage. If a draft about a
+person was wrong, correct it with the person, in writing, and keep the correction with the
+record. Do not silently regenerate.
+"""

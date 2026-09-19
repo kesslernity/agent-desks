@@ -1,0 +1,46 @@
+role = "Executive Desk"
+one_line = "Briefings, board papers, decision memos and the review panel before you send it"
+owner = "The executive whose name is on the paper."
+cadence = "Two scheduled briefings, and the review panel on demand before anything ships."
+profile = "humans-decide"
+
+summary = """
+Two jobs. The first is the daily assembly: what moved, what is waiting on you, what
+you said you would do. The second is the one most decks never get, a reviewer for each function
+that will be in the room, run before the meeting rather than during it.
+"""
+
+skills = [
+  "executive-briefing-pack",
+  "board-paper-skeleton",
+  "decision-memo-builder",
+  "architecture-decision-record",
+  "custom-daily-brief",
+  "commitment-catcher",
+  "cfo-reviewer",
+  "ciso-reviewer",
+  "general-counsel-reviewer",
+  "coo-reviewer",
+  "works-council-reviewer",
+  "frontline-skeptic-reviewer",
+  "investor-reviewer",
+  "kpi-weekly-report-writer",
+]
+scheduled = [
+  "kpi-pack-prep.md",
+  "inbox-triage-digest.md",
+]
+
+never_decides = [
+  "The decision itself. A memo lays out options and a recommendation, and a person picks.",
+  "What is disclosed to a market, a regulator or an investor.",
+  "Whether a reviewer's objection is answered. The panel raises it; you answer it.",
+  "Which numbers are the official ones.",
+]
+
+human_signs = [
+  "Every board paper and every decision memo, as the author.",
+  "Any disclosure, through whatever process governs disclosures.",
+  "The figures, reconciled to the system of record rather than to the briefing.",
+  "The decision, recorded with the date and the options that were rejected.",
+]

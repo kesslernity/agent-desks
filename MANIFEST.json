@@ -1,0 +1,279 @@
+{
+  "packs": [
+    {
+      "slug": "executive-desk",
+      "role": "Executive Desk",
+      "owner": "The executive whose name is on the paper.",
+      "cadence": "Two scheduled briefings, and the review panel on demand before anything ships.",
+      "one_line": "Briefings, board papers, decision memos and the review panel before you send it",
+      "skills": [
+        "executive-briefing-pack",
+        "board-paper-skeleton",
+        "decision-memo-builder",
+        "architecture-decision-record",
+        "custom-daily-brief",
+        "commitment-catcher",
+        "cfo-reviewer",
+        "ciso-reviewer",
+        "general-counsel-reviewer",
+        "coo-reviewer",
+        "works-council-reviewer",
+        "frontline-skeptic-reviewer",
+        "investor-reviewer",
+        "kpi-weekly-report-writer"
+      ],
+      "scheduled": [
+        "kpi-pack-prep.md",
+        "inbox-triage-digest.md"
+      ],
+      "profile": "humans-decide",
+      "never_decides": [
+        "The decision itself. A memo lays out options and a recommendation, and a person picks.",
+        "What is disclosed to a market, a regulator or an investor.",
+        "Whether a reviewer's objection is answered. The panel raises it; you answer it.",
+        "Which numbers are the official ones."
+      ]
+    },
+    {
+      "slug": "finance-and-spend-desk",
+      "role": "Finance and Spend Desk",
+      "owner": "The budget holder for the cost centre in question.",
+      "cadence": "Three scheduled watches, plus the monthly close checklist.",
+      "one_line": "Variance, close, invoice exceptions, renewals and the anomalies nobody watches",
+      "skills": [
+        "budget-variance-explainer",
+        "month-end-close-checklist",
+        "invoice-exception-review",
+        "expense-policy-precheck",
+        "cash-forecast-assumptions-sheet",
+        "capex-request-pack",
+        "purchase-order-anomaly-review",
+        "contract-renewal-radar",
+        "supplier-evaluation-matrix",
+        "kpi-definition-sheet"
+      ],
+      "scheduled": [
+        "spend-anomaly-watch.md",
+        "vendor-renewal-lookahead.md",
+        "kpi-pack-prep.md"
+      ],
+      "profile": "humans-decide",
+      "never_decides": [
+        "Whether to pay an invoice. It flags the exception and names the approver.",
+        "Whether a variance is acceptable. It explains the arithmetic, not the tolerance.",
+        "Whether to renew or cancel a contract.",
+        "Any figure that goes into a statutory filing."
+      ]
+    },
+    {
+      "slug": "hr-and-people-desk",
+      "role": "HR and People Desk",
+      "owner": "The HR business partner for the population affected.",
+      "cadence": "Event driven. Nothing here runs on a timer, deliberately.",
+      "one_line": "Job descriptions, onboarding, scorecards, policy answers and change comms",
+      "skills": [
+        "job-description-drafter",
+        "interview-scorecard-builder",
+        "onboarding-plan-builder",
+        "performance-review-drafter",
+        "exit-interview-synthesis",
+        "policy-question-answerer",
+        "policy-change-briefing",
+        "change-communication-plan",
+        "impact-log-builder",
+        "training-needs-synthesis",
+        "course-outline-builder",
+        "training-quiz-builder"
+      ],
+      "scheduled": [],
+      "profile": "humans-decide",
+      "never_decides": [
+        "Any outcome for a named person: hiring, rating, promotion, pay or exit.",
+        "Whether conduct has occurred, or how it should be treated.",
+        "Whether a policy applies to a specific case. It states what the policy says and routes the question.",
+        "Anything that would be an employment decision under local law."
+      ]
+    },
+    {
+      "slug": "it-service-desk",
+      "role": "IT Service Desk",
+      "owner": "The service desk lead. Not the person who built the agent.",
+      "cadence": "Two scheduled routines overnight, the rest pulled when a ticket lands.",
+      "one_line": "Tickets, incidents, access requests and the knowledge base behind them",
+      "skills": [
+        "ticket-triage-pack",
+        "incident-postmortem-drafter",
+        "runbook-drafter",
+        "knowledge-article-drafter",
+        "knowledge-base-hygiene-review",
+        "change-request-pack",
+        "access-review-pack",
+        "software-request-review",
+        "service-catalogue-entry",
+        "escalation-summary",
+        "inbox-triage",
+        "custom-daily-brief"
+      ],
+      "scheduled": [
+        "overnight-incident-digest.md",
+        "access-review-prep.md"
+      ],
+      "profile": "humans-decide",
+      "never_decides": [
+        "Whether an access request is approved. It assembles the evidence and names who owns the decision.",
+        "Whether a change goes ahead. A change request pack is an input to CAB, not a substitute for it.",
+        "Root cause. A postmortem draft proposes one and marks it as unconfirmed until a person agrees.",
+        "When an incident is closed."
+      ]
+    },
+    {
+      "slug": "project-delivery-desk",
+      "role": "Project Delivery Desk",
+      "owner": "The project manager. The desk writes the update; the PM owns what it says.",
+      "cadence": "Two scheduled rollups, and one status pass per reporting cycle.",
+      "one_line": "Status, RAID, slippage, sprint reviews and the weekly rollup",
+      "skills": [
+        "project-status-tracker",
+        "raid-log-review",
+        "schedule-slip-explainer",
+        "sprint-review-summary",
+        "lessons-learned-synthesis",
+        "stakeholder-map-builder",
+        "weekly-status-update-writer",
+        "meeting-minutes-writer",
+        "meeting-prep-onepager",
+        "transcript-to-actions",
+        "project-dashboard-builder"
+      ],
+      "scheduled": [
+        "project-rollup.md",
+        "backlog-ageing-report.md"
+      ],
+      "profile": "humans-decide",
+      "never_decides": [
+        "The RAG status. It proposes one from the evidence and the manager sets it.",
+        "Whether a risk is accepted, mitigated or escalated.",
+        "A date change. It explains the slip; rebaselining is a governance act.",
+        "Who is accountable for a missed action."
+      ]
+    },
+    {
+      "slug": "quality-and-audit-desk",
+      "role": "Quality and Audit Desk",
+      "owner": "The quality manager, and for a document, its named custodian.",
+      "cadence": "One scheduled document watch, plus the audit calendar.",
+      "one_line": "Nonconformances, corrective actions, audit prep and document control",
+      "skills": [
+        "nonconformance-report-drafter",
+        "corrective-action-tracker",
+        "audit-prep-pack",
+        "master-document-register-check",
+        "transmittal-drafter",
+        "management-of-change-intake",
+        "interface-register-builder",
+        "sop-drafter",
+        "request-intake-triage",
+        "data-quality-issue-log"
+      ],
+      "scheduled": [
+        "doc-change-watch.md"
+      ],
+      "profile": "humans-decide",
+      "never_decides": [
+        "Whether a nonconformance is closed.",
+        "Whether a corrective action was effective.",
+        "Any safety authorisation. Not a permit to work, not a lockout, not a confined space entry, not a JSA sign-off, not an inspection clearance.",
+        "The revision status of a controlled document."
+      ]
+    },
+    {
+      "slug": "sales-desk",
+      "role": "Sales Desk",
+      "owner": "The account owner. Every draft lands in their outbox, never in a customer's inbox.",
+      "cadence": "Two scheduled sweeps, the rest pulled ahead of a call.",
+      "one_line": "Discovery prep, qualification, deal risk, proposals and pipeline hygiene",
+      "skills": [
+        "discovery-call-prep",
+        "lead-qualification-scorer",
+        "account-plan-builder",
+        "deal-risk-review",
+        "proposal-skeleton",
+        "rfp-response-drafter",
+        "estimate-to-sow",
+        "rfp-comparison-pack",
+        "rfp-requirements-pack",
+        "case-study-drafter"
+      ],
+      "scheduled": [
+        "pipeline-hygiene-check.md",
+        "competitor-watch.md"
+      ],
+      "profile": "humans-decide",
+      "never_decides": [
+        "Whether to bid. A requirements pack informs the bid or no-bid meeting.",
+        "Price, discount or commercial terms.",
+        "A forecast commit. Qualification scoring is evidence for the conversation.",
+        "What is said to a customer. Every draft goes out under a person's name, after they have read it."
+      ]
+    },
+    {
+      "slug": "security-and-grc-desk",
+      "role": "Security and GRC Desk",
+      "owner": "The control owner named in the register. The desk drafts for them, never instead of them.",
+      "cadence": "Two scheduled watches, plus whatever the audit calendar drags in.",
+      "one_line": "Control evidence, vendor risk, policy gaps and the regulatory diff",
+      "skills": [
+        "control-evidence-request-pack",
+        "controls-gap-pack",
+        "policy-gap-review",
+        "risk-register-update",
+        "vendor-risk-screening-brief",
+        "vendor-security-questionnaire-prefill",
+        "data-incident-impact-brief",
+        "dpia-draft-pack",
+        "document-deidentification-pass",
+        "regulatory-change-impact-note",
+        "audit-prep-pack"
+      ],
+      "scheduled": [
+        "access-review-prep.md",
+        "regulation-diff-watch.md"
+      ],
+      "profile": "humans-decide",
+      "never_decides": [
+        "Whether a control is effective. It gathers evidence and states what is missing.",
+        "Whether an incident is reportable to a regulator. It drafts the impact brief and stops.",
+        "Whether a vendor is acceptable. A screening brief is an input to a decision, not the decision.",
+        "The residual risk rating on any register line."
+      ]
+    },
+    {
+      "slug": "standing-review",
+      "role": "Standing Review",
+      "owner": "Whoever owns the agent estate. If nobody does, that is the first finding.",
+      "cadence": "Weekly, by hand, against the run logs of every other pack.",
+      "one_line": "Reads what the other desks produced, names what quietly stopped, brings three moves",
+      "skills": [
+        "agent-evaluation-plan",
+        "agent-instructions-red-team",
+        "agent-instructions-drafter",
+        "skill-file-reviewer",
+        "skills-backup-keeper",
+        "no-delete-guardrail",
+        "news-monitor-digest"
+      ],
+      "scheduled": [],
+      "profile": "read-only",
+      "never_decides": [
+        "Whether a desk keeps running. It reports what stopped and who owns it.",
+        "Whether an output was correct. It checks whether an output happened at all.",
+        "Anything about a person's performance. A desk that stopped is an operational fact, not an appraisal."
+      ]
+    }
+  ],
+  "totals": {
+    "packs": 9,
+    "distinct_skills": 95,
+    "scheduled_routines": 12
+  }
+}
