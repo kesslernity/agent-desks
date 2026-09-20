@@ -67,7 +67,11 @@ A desk is the role. A pack is the folder that defines one, and there are nine of
    Copilot prompt that answers the same question, and each `PACK.md` links to that prompt by
    name. The other seven have none, and the table says so rather than sending you to a file
    to find out. The two libraries were written separately and the schedules did not line up.
-   Point the
+   The profile from step 3 does not travel with them. That profile governs a Code session on
+   your own machine; a scheduled task runs in Work, where what the agent may reach is set by
+   the connectors and the approval settings on that account instead. Read those before you
+   schedule anything. A desk that was constrained in Code is not automatically constrained on
+   a schedule, and no file in this repository can make it so. Point the
    output at a person. A schedule that writes into a ticket queue, a mailbox or a repository
    with nobody reading it first is the one configuration that defeats every gate in here, and
    nothing in this repository can stop you building it. I have not tested these against any
